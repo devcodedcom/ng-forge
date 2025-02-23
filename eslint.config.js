@@ -84,8 +84,29 @@ module.exports = tseslint.config(
       "@typescript-eslint/no-empty-function": ["error"],
       "@typescript-eslint/no-implied-eval": ["error"],
       "@typescript-eslint/no-inferrable-types": ["error"],
+      "@typescript-eslint/no-magic-numbers": ["error", {
+        "enforceConst": true,
+        "ignoreDefaultValues": true,
+        "detectObjects": true,
+        "ignoreReadonlyClassProperties": true
+      }],
+      "@typescript-eslint/no-misused-spread": ["error"],
+      "@typescript-eslint/no-shadow": ["error"],
+      "@typescript-eslint/no-unnecessary-boolean-literal-compare": ["error"],
+      "@typescript-eslint/no-unnecessary-condition": ["error"],
+      "@typescript-eslint/no-unnecessary-template-expression": ["error"],
+      "@typescript-eslint/no-unsafe-return": ["error"],
+      "@typescript-eslint/prefer-optional-chain": ["error"],
+      "@typescript-eslint/prefer-readonly": ["error"],
+      "@typescript-eslint/prefer-string-starts-ends-with": ["error"],
+      "@typescript-eslint/promise-function-async": ["error"],
+      "@typescript-eslint/switch-exhaustiveness-check": ["error"],
+
 
       // eslint-plugin-import-x rules (eslint-import-resolver-typescript is required)
+      "import-x/no-unresolved": ["error", {
+        ignore: ["^@ng-ui"] // TODO Change to your requirements
+      }],
       "import-x/order": ["error", {
         "groups": ["builtin","external", "internal", ["sibling", "parent"], "index", "unknown"],
         "newlines-between": "always",
@@ -127,7 +148,8 @@ module.exports = tseslint.config(
       "max-params": ["error"],
       "no-eval": ["error"],
       "no-implied-eval": ["off"], // Has to be off to turn on a @typescript-eslint/no-implied-eval rule
-      "no-magic-numbers": ["error"],
+      "no-magic-numbers": ["off"], // Has to be off to turn on a @typescript-eslint/no-magic-numbers rule
+      "no-shadow": ["off"], // Has to be off to turn on a @typescript-eslint/no-shadow rule
       "sort-imports": [
         "error",
         {
