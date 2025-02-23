@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './english.page.html',
   styleUrl: './english.page.scss'
 })
-export class EnglishPage {
+export class EnglishPageComponent {
 
 }

@@ -2,6 +2,11 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "cli": {
+    "schematicCollections": [
+      "angular-eslint"
+    ]
+  },
   "projects": {
     "ng-ui": {
       "projectType": "library",
@@ -32,6 +37,16 @@
               "zone.js",
               "zone.js/testing"
             ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ng-ui/**/*.ts",
+              "projects/ng-ui/**/*.html"
+            ],
+            "eslintConfig": "projects/ng-ui/eslint.config.js"
           }
         }
       }
@@ -144,6 +159,16 @@
               "projects/forge/src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/forge/**/*.ts",
+              "projects/forge/**/*.html"
+            ],
+            "eslintConfig": "projects/forge/eslint.config.js"
           }
         }
       }

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './board.page.html',
   styleUrl: './board.page.scss'
 })
-export class BoardPage {
+export class BoardPageComponent {
 
 }
