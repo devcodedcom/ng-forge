@@ -4,6 +4,7 @@ const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
 const rxjs = require('eslint-plugin-rxjs-x');
 const eslintImportX = require('eslint-plugin-import-x');
+const lukas = require("./custom-plugin");
 
 module.exports = tseslint.config(
   {
@@ -156,11 +157,15 @@ module.exports = tseslint.config(
           "ignoreCase": true,
           "ignoreDeclarationSort": true
         }
-      ]
+      ],
+
     },
   },
   {
     files: ["**/*.html"],
+    plugins: {
+      "lukas": lukas
+    },
     extends: [
       ...angular.configs.templateRecommended,
       // ...angular.configs.templateAccessibility, TODO To be changed when accessibility is needed
@@ -171,7 +176,9 @@ module.exports = tseslint.config(
       "@angular-eslint/template/prefer-self-closing-tags": ["error"],
       "@angular-eslint/template/no-any": ["error"], // TODO To be changed to error in the future
       "@angular-eslint/template/no-inline-styles": ["error"],
-      "@angular-eslint/template/prefer-control-flow": ["error"]
+      "@angular-eslint/template/prefer-control-flow": ["error"],
+      // custom rules
+      "lukas/test": "error"
     },
   }
 );

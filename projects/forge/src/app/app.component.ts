@@ -12,4 +12,12 @@ import { UsersComponent } from './users/users.component';
 })
 export class AppComponent {
   title = 'forge';
+
+  onMethod(a: unknown) {
+console.log(a)
+  }
+
+  onTest(): void {
+
+  }
 }

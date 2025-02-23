@@ -1,7 +1,7 @@
 <h1 id="input2" type="text">Forge</h1>
 <router-outlet />
 
-<fg-users [data]="[]"  (draggable)="$event" (closable)="$event" />
+<fg-users [data]="[]"  (draggable)="onTest()" (closable)="onTest()" />
 <img src="/" alt="">
 
 
@@ -10,4 +10,4 @@
 }
 
 
-<div (click)="true">Click me</div>
+<div (click)="onMethod($event)">Click me</div>
