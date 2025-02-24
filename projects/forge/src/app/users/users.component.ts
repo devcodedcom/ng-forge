@@ -6,9 +6,10 @@ import {
   InputSignal,
   OnDestroy,
   OnInit,
-  Output,
-  ViewEncapsulation
+  Output, ViewEncapsulation
 } from '@angular/core';
+
+
 
 interface User {
   name: string;

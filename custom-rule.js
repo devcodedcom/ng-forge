@@ -2,16 +2,14 @@ module.exports = {
   meta: {
     type: "problem",
     docs: {
-      description: "Wymaga, aby nazwy metod obsługujących eventy zaczynały się od 'on'",
+      description: "Requires event handler method names to start with 'on'.",
     },
     schema: [], // nie potrzebujemy dodatkowej konfiguracji
     messages: {
-      missingPrefix: "Metoda obsługująca event '{{ methodName }}' powinna zaczynać się od 'on'.",
+      missingPrefix: "The method handling the event '{{ methodName }}' should start with 'on'.",
     },
   },
   create(context) {
-    console.log('siemaaaaaaaa')
-    // console.log(context)
     return {
       BoundEvent(node) {
         const regexWithArgs = /^on[A-Z]\w*\(.*\)$/;
@@ -28,27 +26,9 @@ module.exports = {
           }
         }
       },
-      // "Attribute[value]"(node) {
       // https://astexplorer.net/
       // https://fintech.theodo.com/blog-posts/eslint-on-steroids-with-custom-rules
       // https://medium.com/frontendjourney/write-scalable-efficient-custom-eslint-rules-3d12f0570b51
-      //   console.log('YOOOOOOOOOOOOOOO')
-      //   const value = node.value;
-      //   const eventPattern = /\((\w+)\)="(\w+)\((.*?)\)"/g; // dopasowanie (event)="method()"
-      //   let match;
-      //
-      //   while ((match = eventPattern.exec(value))) {
-      //     const methodName = match[2]; // nazwa metody
-      //
-      //     if (!methodName.startsWith("on")) {
-      //       context.report({
-      //         node,
-      //         messageId: "missingPrefix",
-      //         data: { methodName },
-      //       });
-      //     }
-      //   }
-      // },
     };
   },
 };

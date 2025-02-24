@@ -103,7 +103,6 @@ module.exports = tseslint.config(
       "@typescript-eslint/promise-function-async": ["error"],
       "@typescript-eslint/switch-exhaustiveness-check": ["error"],
 
-
       // eslint-plugin-import-x rules (eslint-import-resolver-typescript is required)
       "import-x/no-unresolved": ["error", {
         ignore: ["^@ng-ui"] // TODO Change to your requirements
@@ -146,11 +145,24 @@ module.exports = tseslint.config(
       }],
 
       // eslint rules
+      "accessor-pairs": ["error"],
+      "arrow-body-style": ["error", "as-needed"],
+      "curly": ["error"],
+      "default-case": ["error"],
+      "default-case-last": ["error"],
+      "dot-notation": ["error"],
+      "eqeqeq": ["error"],
+      "grouped-accessor-pairs": ["error"],
+      "guard-for-in": ["error"],
+      "id-length": ["error", {
+        "min": 3
+      }],
       "max-params": ["error"],
+      "no-duplicate-imports": ["error"],
       "no-eval": ["error"],
-      "no-implied-eval": ["off"], // Has to be off to turn on a @typescript-eslint/no-implied-eval rule
-      "no-magic-numbers": ["off"], // Has to be off to turn on a @typescript-eslint/no-magic-numbers rule
-      "no-shadow": ["off"], // Has to be off to turn on a @typescript-eslint/no-shadow rule
+      "no-implied-eval": ["off"], // Has to be off due to a @typescript-eslint/no-implied-eval rule
+      "no-magic-numbers": ["off"], // Has to be off due to a @typescript-eslint/no-magic-numbers rule
+      "no-shadow": ["off"], // Has to be off due to a @typescript-eslint/no-shadow rule
       "sort-imports": [
         "error",
         {
