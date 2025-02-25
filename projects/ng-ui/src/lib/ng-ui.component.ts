@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'ng-ng-ui',
   imports: [],
   template: ` <p>ng-ui works!</p> `,
-  styles: ``
+  styles: ``,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NgUiComponent {}
