@@ -4,7 +4,7 @@ module.exports = {
     docs: {
       description: "Requires event handler method names to start with 'on'.",
     },
-    schema: [], // nie potrzebujemy dodatkowej konfiguracji
+    schema: [],
     messages: {
       missingPrefix: "The method handling the event '{{ methodName }}' should start with 'on'.",
     },
@@ -12,12 +12,11 @@ module.exports = {
   create(context) {
     return {
       BoundEvent(node) {
+        // "onClick()", "onKeyDown() etc.
         const regexWithArgs = /^on[A-Z]\w*\(.*\)$/;
 
         if (node.handler.source) {
           if (!regexWithArgs.test(node.handler.source)) {
-            console.log('DUPAAAAAA')
-
             context.report({
               node,
               messageId: "missingPrefix",

@@ -4,7 +4,7 @@ const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
 const rxjs = require('eslint-plugin-rxjs-x');
 const eslintImportX = require('eslint-plugin-import-x');
-const lukas = require("./custom-plugin");
+const customEslintPlugin = require("./plugins/eslint/custom-eslint-plugin");
 
 module.exports = tseslint.config(
   {
@@ -176,7 +176,7 @@ module.exports = tseslint.config(
   {
     files: ["**/*.html"],
     plugins: {
-      "lukas": lukas
+      "custom-eslint-plugin": customEslintPlugin
     },
     extends: [
       ...angular.configs.templateRecommended,
@@ -189,8 +189,9 @@ module.exports = tseslint.config(
       "@angular-eslint/template/no-any": ["error"], // TODO To be changed to error in the future
       "@angular-eslint/template/no-inline-styles": ["error"],
       "@angular-eslint/template/prefer-control-flow": ["error"],
+
       // custom rules
-      "lukas/test": "error"
+      "custom-eslint-plugin/prefer-event-handler-prefix": ["error"]
     },
   }
 );
