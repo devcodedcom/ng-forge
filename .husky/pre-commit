@@ -1,3 +1,2 @@
-#!/bin/sh
-. "$(dirname "$0")/_/h"
+
 npm run lint-staged
