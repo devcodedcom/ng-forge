@@ -12,14 +12,13 @@ import { UsersComponent } from './users/users.component';
 })
 export class AppComponent {
   title = 'forge';
-  val = ''
-
+  val = '';
 
   onMethod(abc: unknown, das: unknown, fas: unknown, gas: unknown): void {
     console.log(abc);
   }
 
   onTest(): void {
-      console.log('test')
+    console.log('test');
   }
 }

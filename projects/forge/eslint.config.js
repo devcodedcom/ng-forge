@@ -1,32 +1,32 @@
 // @ts-check
-const tseslint = require("typescript-eslint");
-const rootConfig = require("../../eslint.config.js");
+const tseslint = require('typescript-eslint');
+const rootConfig = require('../../eslint.config.js');
 
 module.exports = tseslint.config(
   ...rootConfig,
   {
-    files: ["**/*.ts"],
+    files: ['**/*.ts'],
     rules: {
-      "@angular-eslint/directive-selector": [
-        "error",
+      '@angular-eslint/directive-selector': [
+        'error',
         {
-          type: "attribute",
-          prefix: "fg",
-          style: "camelCase",
-        },
+          type: 'attribute',
+          prefix: 'fg',
+          style: 'camelCase'
+        }
       ],
-      "@angular-eslint/component-selector": [
-        "error",
+      '@angular-eslint/component-selector': [
+        'error',
         {
-          type: "element",
-          prefix: "fg",
-          style: "kebab-case",
-        },
-      ],
-    },
+          type: 'element',
+          prefix: 'fg',
+          style: 'kebab-case'
+        }
+      ]
+    }
   },
   {
-    files: ["**/*.html"],
-    rules: {},
+    files: ['**/*.html'],
+    rules: {}
   }
 );

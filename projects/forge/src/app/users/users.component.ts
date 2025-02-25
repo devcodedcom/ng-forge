@@ -6,42 +6,35 @@ import {
   InputSignal,
   OnDestroy,
   OnInit,
-  Output, ViewEncapsulation
+  Output,
+  ViewEncapsulation
 } from '@angular/core';
-
-
 
 interface User {
   name: string;
-  age: number
+  age: number;
 }
 
 @Component({
   selector: 'fg-users',
   imports: [],
-  template: `<div>
-    sda
-  </div>`,
+  template: `<div>sda</div>`,
   styleUrl: './users.component.scss',
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UsersComponent implements OnDestroy, OnInit {
-
-  @Output() readonly closable = new EventEmitter<boolean>()
-  @Output() readonly draggable = new EventEmitter<boolean>()
+  @Output() readonly closable = new EventEmitter<boolean>();
+  @Output() readonly draggable = new EventEmitter<boolean>();
 
   readonly UPPERCA_SE = 20;
-  readonly data: InputSignal<User[]> = input([{name: 'Lukas', age: this.UPPERCA_SE}]);
+  readonly data: InputSignal<User[]> = input([{ name: 'Lukas', age: this.UPPERCA_SE }]);
 
   ngOnInit(): void {
-    console.log('hej')
+    console.log('hej');
   }
-
 
   ngOnDestroy(): void {
-    console.log('hej')
+    console.log('hej');
   }
 }
-
-

@@ -7,6 +7,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './board.page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BoardPageComponent {
-
-}
+export class BoardPageComponent {}

@@ -9,8 +9,7 @@ describe('NgUiComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [NgUiComponent]
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NgUiComponent);
     component = fixture.componentInstance;

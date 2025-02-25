@@ -10,9 +10,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "ng-ui": [
-        "./dist/ng-ui"
-      ]
+      "ng-ui": ["./dist/ng-ui"]
     },
     "skipLibCheck": true,
     "isolatedModules": true,

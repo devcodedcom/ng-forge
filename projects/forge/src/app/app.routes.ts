@@ -7,6 +7,7 @@ export const routes: Routes = [
   },
   {
     path: 'english',
-    loadComponent: async () => import('./feature/english/page/english/english.page').then(page => page.EnglishPageComponent)
+    loadComponent: async () =>
+      import('./feature/english/page/english/english.page').then(page => page.EnglishPageComponent)
   }
 ];

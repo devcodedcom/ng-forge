@@ -38,7 +38,7 @@ What does the --save-exact flag do when installing packages?
 
 What is the difference between npm start, npm run start, and node server.js?
 
-How do you clear the npm cache?   
+How do you clear the npm cache?
 
 ## Advanced npm Questions
 
@@ -81,4 +81,3 @@ What does npx do, and how is it different from npm install -g?
 How do you use npm pack to test a package before publishing?
 
 How can you create and use an npm package with TypeScript support?
-
