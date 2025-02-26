@@ -1,8 +1,8 @@
 // @ts-check
-const tseslint = require('typescript-eslint');
-const rootConfig = require('../../eslint.config.js');
+import tsEslint from 'typescript-eslint';
+import rootConfig from '../../eslint.config.js';
 
-module.exports = tseslint.config(
+export default tsEslint.config(
   ...rootConfig,
   {
     files: ['**/*.ts'],
@@ -26,7 +26,6 @@ module.exports = tseslint.config(
     }
   },
   {
-    files: ['**/*.html'],
-    rules: {}
+    files: ['**/*.html']
   }
 );

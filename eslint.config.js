@@ -1,27 +1,26 @@
 // @ts-check
-const eslint = require('@eslint/js');
-const tseslint = require('typescript-eslint');
-const angular = require('angular-eslint');
-const rxjs = require('eslint-plugin-rxjs-x');
-const eslintImportX = require('eslint-plugin-import-x');
-const customEslintPlugin = require('./plugins/eslint/custom-eslint-plugin');
+import eslint from '@eslint/js';
+import tsEslint from 'typescript-eslint';
+import angular from 'angular-eslint';
+import rxjs from 'eslint-plugin-rxjs-x';
+import eslintImportX from 'eslint-plugin-import-x';
+import customEslintPlugin from './plugins/eslint/custom-eslint-plugin.js';
 
-module.exports = tseslint.config(
+export default tsEslint.config(
+  eslint.configs.recommended,
   {
     files: ['**/*.ts'],
     extends: [
       eslint.configs.recommended,
-      ...tseslint.configs.recommended,
-      ...tseslint.configs.stylistic,
+      ...tsEslint.configs.recommended,
+      ...tsEslint.configs.stylistic,
       ...angular.configs.tsRecommended,
       rxjs.configs.strict,
-
       // Needed both for importing, sorting and grouping imports
       // It requires eslint-import-resolver-typescript for grouping and importing
       eslintImportX.flatConfigs.recommended,
       eslintImportX.flatConfigs.typescript
     ],
-    // Needed for eslint-plugin-rxjs-x
     languageOptions: {
       parserOptions: {
         projectService: true
