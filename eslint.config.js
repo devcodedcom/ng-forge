@@ -194,6 +194,27 @@ export default tsEslint.config(
     }
   },
   {
+    files: ['**/*.html'],
+    plugins: {
+      'custom-eslint-plugin': customEslintPlugin
+    },
+    extends: [
+      ...angular.configs.templateRecommended
+      // ...angular.configs.templateAccessibility, TODO To be changed when accessibility is needed
+    ],
+    rules: {
+      '@angular-eslint/template/alt-text': ['error'],
+      '@angular-eslint/template/attributes-order': ['error'],
+      '@angular-eslint/template/prefer-self-closing-tags': ['error'],
+      '@angular-eslint/template/no-any': ['error'], // TODO To be changed to error in the future
+      '@angular-eslint/template/no-inline-styles': ['error'],
+      '@angular-eslint/template/prefer-control-flow': ['error'],
+
+      // custom rules
+      'custom-eslint-plugin/prefer-event-handler-prefix': ['error']
+    }
+  },
+  {
     files: [
       '**/*.component.ts',
       '**/*.directive.ts',
@@ -224,24 +245,13 @@ export default tsEslint.config(
     }
   },
   {
-    files: ['**/*.html'],
+    files: ['**/*.**'],
     plugins: {
       'custom-eslint-plugin': customEslintPlugin
     },
-    extends: [
-      ...angular.configs.templateRecommended
-      // ...angular.configs.templateAccessibility, TODO To be changed when accessibility is needed
-    ],
     rules: {
-      '@angular-eslint/template/alt-text': ['error'],
-      '@angular-eslint/template/attributes-order': ['error'],
-      '@angular-eslint/template/prefer-self-closing-tags': ['error'],
-      '@angular-eslint/template/no-any': ['error'], // TODO To be changed to error in the future
-      '@angular-eslint/template/no-inline-styles': ['error'],
-      '@angular-eslint/template/prefer-control-flow': ['error'],
-
       // custom rules
-      'custom-eslint-plugin/prefer-event-handler-prefix': ['error']
+      'custom-eslint-plugin/filename-match-regexp': ['error']
     }
   }
 );

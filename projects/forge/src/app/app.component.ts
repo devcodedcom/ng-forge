@@ -14,8 +14,8 @@ export class AppComponent {
   title = 'forge';
   val = '';
 
-  onMethod(abc: unknown, das: unknown, fas: unknown, gas: unknown): void {
-    console.log(abc);
+  onMethod(abc: unknown, das: unknown, fas: unknown): void {
+    console.log(abc, das, fas);
   }
 
   onTest(): void {
