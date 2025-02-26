@@ -25,6 +25,8 @@ export default {
           }
         }
       }
+      // https://typescript-eslint.io/play/
+      // https://explorer.eslint.org/
       // https://astexplorer.net/
       // https://fintech.theodo.com/blog-posts/eslint-on-steroids-with-custom-rules
       // https://medium.com/frontendjourney/write-scalable-efficient-custom-eslint-rules-3d12f0570b51

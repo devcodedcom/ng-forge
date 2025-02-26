@@ -194,6 +194,36 @@ export default tsEslint.config(
     }
   },
   {
+    files: [
+      '**/*.component.ts',
+      '**/*.directive.ts',
+      '**/*.service.ts',
+      '**/*.pipe.ts',
+      '**/*.resolver.ts',
+      '**/*.interceptor.ts',
+      '**/*.config.ts',
+      '**/*.class.ts',
+      '**/*.guard.ts'
+    ],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'TSTypeAliasDeclaration',
+          message: 'Type definition in the file is prohibited. Move it to a separate file.'
+        },
+        {
+          selector: 'TSInterfaceDeclaration',
+          message: 'Interface definition in the file is prohibited. Move it to a separate file.'
+        },
+        {
+          selector: 'TSEnumDeclaration',
+          message: 'Enum definition in the file is prohibited. Move it to a separate file.'
+        }
+      ]
+    }
+  },
+  {
     files: ['**/*.html'],
     plugins: {
       'custom-eslint-plugin': customEslintPlugin
