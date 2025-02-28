@@ -245,7 +245,7 @@ export default tsEslint.config(
     }
   },
   {
-    files: ['**/*.**'],
+    files: ['**/*.ts', '**/*.html'],
     plugins: {
       'custom-eslint-plugin': customEslintPlugin
     },
